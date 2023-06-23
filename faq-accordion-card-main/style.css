@@ -1,0 +1,126 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: "Kumbh Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+   align-items: center;
+   justify-content: center; 
+   display: flex;
+   flex-direction: column;
+   min-height: 100vh;
+   color: hsl(240, 6%, 50%);
+   background-image: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%));
+}
+h1{
+    font-weight: 700;
+    text-align: center;
+    margin: 2.5rem 0;
+    margin-top: 4rem;
+    font-size: 2rem;
+    color: hsl(238, 29%, 16%);
+}
+.container{
+    background-color: white;
+width: 75%;
+border-radius: 20px;
+background-image: url(/images/bg-pattern-mobile.svg);
+background-repeat: no-repeat;
+background-position: center 3%;
+background-size: 60%;
+}
+.image .mobile-img {
+    max-width: 65%;
+    margin: auto;
+    margin-top: -6rem;
+    display: block;
+}
+.image .card-box{
+    display: none;
+}
+
+.accordion{
+    width: 85%;
+    margin: 2rem auto;
+}
+.accordion-item{
+    margin: 1rem 0;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid hsl(240, 5%, 91%);
+}
+.accordion-item-question{
+    padding: 0.5rem 3rem 0.5rem 1rem;
+    min-height: 2.5rem;
+    line-height: 1.25rem;
+    display: flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+}
+.accordion-item-question::after{
+    content: url(/images/icon-arrow-down.svg);
+    position: absolute;
+    right: 1rem;
+}
+.accordion-item-question.active::after{
+    transform: rotate(180deg);
+}
+
+.accordion-item-question:hover{
+    color: hsl(14, 88%, 65%);
+}
+.accordion-item-body{
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+.accordion-item-body-answer{
+    padding: 1rem;
+    line-height: 1.5rem;
+}
+
+.attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+
+    @media (min-width: 800px){
+        .container{
+            display: flex;
+            max-width: 950px;
+            width: 90%;
+        }
+        .image, .accordion {
+            flex: 1;
+        }
+        h1{
+            text-align: left;
+            margin: 1rem 0;
+        }
+        .accordion{
+            padding-right: 3rem;
+        }
+        .container{
+            overflow: hidden;
+            background-image: none;
+        }
+        .image{
+            background-image: url(/images/bg-pattern-desktop.svg);
+            background-repeat: no-repeat;
+            background-position: right -15% top 70%;
+
+        }
+        .image .mobile-img{
+            max-width: 27rem;
+            margin-top: 6rem;
+            transform: translateX(-4rem);
+            
+        }
+        .image .card-box{
+            display: block;
+            position: absolute;
+            top: 45%;
+            left: 18%;}
+            
+    }
